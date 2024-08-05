@@ -14,12 +14,12 @@ const Navbar = () => {
             }
 
             Events.scrollEvent.register('begin', (to: any, element: any) => {
-                console.log('begin', to, element);
+                //console.log('begin', to, element);
               });
           
               // Registering the 'end' event and logging it to the console when triggered.
               Events.scrollEvent.register('end', (to: any, element: any) => {
-                console.log('end', to, element);
+                // console.log('end', to, element);
               });
           
               // Updating scrollSpy when the component mounts.

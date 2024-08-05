@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?  family=Montserrat:ital,wght@0,100;0,200;1,100;1,200&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -8,10 +9,12 @@
   --background-end-rgb: 255, 255, 255;
   --foreground-hex: #F8F8F8;
   --color-header: text-black;
+  --font: 'Montserrat', sans-serif;
 }
 
 body {
   background-color: var(--foreground-hex);
+  font-family: var(--font);
 }
 
 h1, h2{
@@ -56,4 +59,7 @@ label span {
   @apply text-black hover:text-gray-100;
 }
 
-
+/* About Section */
+aboutme-text{
+  @apply text-sm;
+}
