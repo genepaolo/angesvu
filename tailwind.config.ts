@@ -30,7 +30,10 @@ const config: Config = {
         800: "#2d3748",
         900: "#1a202c",
       },
-      blue: "#CDEDF7"
+      blue: "#CDEDF7",
+      honeydew: "#DDFFEE",
+      tiffany: "#98E4D5",
+      cambridge: "#73ACA0"
     }
   },
   plugins: [],

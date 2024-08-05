@@ -28,6 +28,7 @@ export default function RootLayout({
       <body className={montserrat.className}>
           <Navbar />
           {children}
+          <script src="https://kit.fontawesome.com/5159edec0e.js" crossOrigin="anonymous"></script>
         </body>
     </html>
   );

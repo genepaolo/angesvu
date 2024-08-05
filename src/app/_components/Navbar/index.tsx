@@ -39,7 +39,7 @@ const Navbar = () => {
     }, []);
     
     return (
-        <nav className={`p-4 sticky top-0 bg-white z-20 transition-shadow duration-300 ${shadow ? 'shadow-lg' : ''}`}>
+        <nav className={`px-16 py-4 sticky top-0 max-w-7xl mx-auto bg-white z-20 transition-shadow duration-300 ${shadow ? 'shadow-lg' : ''}`}>
             <div className="max-w-7xl mx-auto">
                 <div className="sm:hidden relative">
                     <input type="checkbox" id="menu-toggle" className="absolute opacity-0 peer"/>
@@ -74,9 +74,9 @@ const Navbar = () => {
                     <Link to="research" smooth={true} duration={500}  className="text-nav block sm:inline-block cursor-pointer">
                         Research
                     </Link>
-                    {/* <Link href="/contact" className="text-nav sm:inline-block">
+                    <a href="/data/Vu_cv.pdf" className="text-nav sm:inline-block" target="_blank">
                             CV
-                    </Link> */}
+                    </a>
                 </div>
             </div>
         </nav>
