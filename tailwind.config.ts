@@ -30,6 +30,7 @@ const config: Config = {
         800: "#2d3748",
         900: "#1a202c",
       },
+      blue: "#CDEDF7"
     }
   },
   plugins: [],
