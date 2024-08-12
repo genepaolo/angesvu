@@ -31,7 +31,7 @@ export default function Home() {
         {/* <div className="absolute spacer hero-bg"></div> */}
       </section>
       
-      <section id="teaching" className="h-screen bg-blue">
+      <section id="teaching" className="h-screen bg-tiffany">
       </section>
       <section id="research"className="h-screen bg-transparent">
       </section>

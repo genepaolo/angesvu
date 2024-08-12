@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 const Navbar = () => {
     const [shadow, setShadow] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -14,12 +15,12 @@ const Navbar = () => {
             }
 
             Events.scrollEvent.register('begin', (to: any, element: any) => {
-                //console.log('begin', to, element);
+                // setMenuOpen(false);
               });
           
               // Registering the 'end' event and logging it to the console when triggered.
               Events.scrollEvent.register('end', (to: any, element: any) => {
-                // console.log('end', to, element);
+                //console.log('end', to, element);
               });
           
               // Updating scrollSpy when the component mounts.
@@ -31,39 +32,62 @@ const Navbar = () => {
                 Events.scrollEvent.remove('end');
               };
         };
-
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+
+
+    }, [menuOpen]);
     
+    const handleToggleMenu = () => {
+        setMenuOpen((prevMenuOpen) => !prevMenuOpen);
+      };
+    
+      const handleLinkClick = () => {
+        setMenuOpen(false);
+      };
+
     return (
-        <nav className={`px-16 py-4 sticky top-0 max-w-7xl mx-auto bg-white z-20 transition-shadow duration-300 ${shadow ? 'shadow-lg' : ''}`}>
+        <nav className={`sticky top-0 max-w-7xl mx-auto bg-white z-20 transition-shadow duration-300 ${shadow ? 'shadow-lg' : ''}`}>
             <div className="max-w-7xl mx-auto">
-                <div className="sm:hidden relative">
-                    <input type="checkbox" id="menu-toggle" className="absolute opacity-0 peer"/>
-                    <label htmlFor="menu-toggle" className="block md:hidden cursor-pointer text-white relative z-20">
-                        <span className="block relative w-6 h-0.5 bg-black transition duration-300 transform origin-center"></span>
-                        <span className="block relative w-6 h-0.5 bg-black transition duration-300 transform mt-1.5 origin-center"></span>
-                        <span className="block relative w-6 h-0.5 bg-black transition duration-300 transform mt-1.5 origin-center"></span>
-                    </label>
-                    <div className="absolute top-full left-0 right-0 bg-gray-800 flex flex-col items-center space-y-2 mt-2 p-4 transition-transform transform peer-checked:scale-100 scale-0">
+                <div className="sm:hidden relative px-16 py-4 ">
+                    <button onClick={handleToggleMenu} className="md:hidden text-white relative w-8 h-8">>
+                        <span
+                            className={`block absolute w-8 h-0.5 bg-black transform transition duration-300 ease-in-out ${
+                            menuOpen ? 'rotate-45 top-3.5' : 'top-2'
+                            }`}
+                        ></span>
+                        <span
+                            className={`block absolute w-8 h-0.5 bg-black transition-opacity duration-300 ease-in-out ${
+                            menuOpen ? 'opacity-0' : 'opacity-100 top-4'
+                            }`}
+                        ></span>
+                        <span
+                            className={`block absolute w-8 h-0.5 bg-black transform transition duration-300 ease-in-out ${
+                            menuOpen ? '-rotate-45 top-3.5' : 'top-6'
+                            }`}
+                        ></span>
+                    </button>
+                    <button onClick={handleToggleMenu} className={`${
+            menuOpen ? 'flex' : 'hidden'
+          } absolute left-0 top-full bg-tiffany h-screen w-screen flex-col space-y-2 md:hidden transition-opacity duration-300 opacity-100 z-10 px-16 py-4 `}>
                         <Link to="about" smooth={true} duration={500} className="text-nav block cursor-pointer">
-                            About
+                            <button onClick={handleToggleMenu}>About</button>
                         </Link>
                         <Link to="teaching" smooth={true} duration={500} className="text-nav block cursor-pointer">
-                            Teaching
+                            <button onClick={handleToggleMenu}>Teaching</button>
                         </Link>
                         <Link to="research" smooth={true} duration={500} className="text-nav block cursor-pointer">
-                            Research
+                            <button onClick={handleToggleMenu}>Research</button>
                         </Link>
-                        {/* <Link href="/contact" className="text-nav block">
-                            CV
-                        </Link> */}
-                    </div>
+                        <a href="/data/Vu_cv.pdf" className="text-nav sm:inline-block" target="_blank">
+                            <button onClick={handleToggleMenu}>CV</button>
+
+                        </a>
+                    </button>
                 </div>
-                <div className="hidden sm:flex sm:items-center sm:space-x-4">
+                <div className="hidden sm:flex sm:items-center sm:space-x-4 px-16 py-4 ">
                     
                     <Link to="about" smooth={true} duration={500} className="text-nav block sm:inline-block cursor-pointer">
                         About
