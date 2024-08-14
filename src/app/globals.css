@@ -57,7 +57,16 @@ label span {
 }
 
 .text-nav {
-  @apply text-black hover:text-gray-100;
+  display: inline-block;
+  cursor: pointer;
+  @apply text-black hover:text-tiffany hover:no-underline;
+
+}
+
+.text-nav-menu{
+  display: block;
+  cursor: pointer;
+  @apply text-black hover:text-white hover:no-underline;
 }
 
 /* About Section */

@@ -42,17 +42,23 @@ const Navbar = () => {
     
     const handleToggleMenu = () => {
         setMenuOpen((prevMenuOpen) => !prevMenuOpen);
-      };
+    };
     
-      const handleLinkClick = () => {
+    const handleLinkClick = () => {
         setMenuOpen(false);
-      };
+    };
+
+    const scrollToTop = () => {
+        scroll.scrollToTop();
+    };
+
+
 
     return (
         <nav className={`sticky top-0 max-w-7xl mx-auto bg-white z-20 transition-shadow duration-300 ${shadow ? 'shadow-lg' : ''}`}>
             <div className="max-w-7xl mx-auto">
                 <div className="sm:hidden relative px-16 py-4 ">
-                    <button onClick={handleToggleMenu} className="md:hidden text-white relative w-8 h-8">>
+                    <button onClick={handleToggleMenu} className="md:hidden text-white relative w-8 h-8">
                         <span
                             className={`block absolute w-8 h-0.5 bg-black transform transition duration-300 ease-in-out ${
                             menuOpen ? 'rotate-45 top-3.5' : 'top-2'
@@ -69,36 +75,36 @@ const Navbar = () => {
                             }`}
                         ></span>
                     </button>
-                    <button onClick={handleToggleMenu} className={`${
+                    <div onClick={handleToggleMenu} className={`${
             menuOpen ? 'flex' : 'hidden'
-          } absolute left-0 top-full bg-tiffany h-screen w-screen flex-col space-y-2 md:hidden transition-opacity duration-300 opacity-100 z-10 px-16 py-4 `}>
-                        <Link to="about" smooth={true} duration={500} className="text-nav block cursor-pointer">
+          } absolute left-0 top-full bg-tiffany h-screen w-screen flex-col space-y-2 md:hidden transition-opacity duration-1000 opacity-100 z-10 px-16 py-4 `}>
+                        <Link to="about" smooth={true} duration={500} className="text-nav-menu">
                             <button onClick={handleToggleMenu}>About</button>
                         </Link>
-                        <Link to="teaching" smooth={true} duration={500} className="text-nav block cursor-pointer">
+                        <Link to="teaching" smooth={true} duration={500} className="text-nav-menu">
                             <button onClick={handleToggleMenu}>Teaching</button>
                         </Link>
-                        <Link to="research" smooth={true} duration={500} className="text-nav block cursor-pointer">
+                        <Link to="research" smooth={true} duration={500} className="text-nav-menu">
                             <button onClick={handleToggleMenu}>Research</button>
                         </Link>
-                        <a href="/data/Vu_cv.pdf" className="text-nav sm:inline-block" target="_blank">
+                        <a href="/data/Vu_cv.pdf" className="text-nav-menu" target="_blank">
                             <button onClick={handleToggleMenu}>CV</button>
 
                         </a>
-                    </button>
+                    </div>
                 </div>
                 <div className="hidden sm:flex sm:items-center sm:space-x-4 px-16 py-4 ">
                     
-                    <Link to="about" smooth={true} duration={500} className="text-nav block sm:inline-block cursor-pointer">
+                    <Link to="about" smooth={true} duration={500} className="text-nav">
                         About
                     </Link>
-                    <Link to="teaching" smooth={true} duration={500}  className="text-nav block sm:inline-block cursor-pointer">
+                    <Link to="teaching" smooth={true} duration={500}  className="text-nav">
                         Teaching
                     </Link>
-                    <Link to="research" smooth={true} duration={500}  className="text-nav block sm:inline-block cursor-pointer">
+                    <Link to="research" smooth={true} duration={500}  className="text-nav">
                         Research
                     </Link>
-                    <a href="/data/Vu_cv.pdf" className="text-nav sm:inline-block" target="_blank">
+                    <a href="/data/Vu_cv.pdf" className="text-nav" target="_blank">
                             CV
                     </a>
                 </div>

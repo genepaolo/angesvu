@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
+      <body className={montserrat.className} id="home">
           <Navbar />
           {children}
           <script src="https://kit.fontawesome.com/5159edec0e.js" crossOrigin="anonymous"></script>

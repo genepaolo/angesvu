@@ -2,7 +2,7 @@ import Image from "next/image";
 import angesPic from "./_imgs/anges.jpg"
 export default function Home() {
   return (
-    <main className="relative">
+    <main className="relative" >
       <section className="mx-auto relative h-screen " id="about">
         <div className="w-full flex flex-col gap-y-4 justify-center py-16 z-10 relative">
           <h1 className="text-6xl font-bold text-center">Anges Vu</h1>
