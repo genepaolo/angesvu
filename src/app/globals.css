@@ -10,6 +10,7 @@
   --color-text: #73ACA0;
   --color-header: text-black;
   --color-nav: #73ACA0;
+  --color-p: #7F888E;
   --font: 'Montserrat', sans-serif;
 }
 
@@ -59,7 +60,7 @@ label span {
 .text-nav {
   display: inline-block;
   cursor: pointer;
-  @apply text-black hover:text-tiffany hover:no-underline;
+  @apply text-gray hover:text-tiffany hover:no-underline;
 
 }
 
@@ -76,4 +77,8 @@ aboutme-text{
 
 a {
   @apply text-cambridge hover:underline;
+}
+
+p {
+  @apply text-gray;
 }
