@@ -60,7 +60,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`sticky top-0 w-full mx-auto z-20 transition-shadow duration-300 ${
+      className={`sticky bg-white top-0 w-full mx-auto z-20 transition-shadow duration-300 ${
         shadow ? "shadow-lg" : ""
       }`}
     >
