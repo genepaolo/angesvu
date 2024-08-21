@@ -1,5 +1,7 @@
 import Image from "next/image";
 import angesPic from "./_imgs/anges.jpg"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSchool, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 export default function Home() {
   return (
     <main className="relative" >
@@ -24,7 +26,9 @@ export default function Home() {
               </p>
               <p className="aboutme-text">Before coming to Northwestern, I completed my BA in Linguistics and minors in Computer Science, Psychology, and Cognitive Science from UC San Diego.
               </p>
-              <p className="aboutme-text">            <i className="fa-solid fa-envelope text-cambridge"></i> <a target="_blank" href="mailto:angesvu@u.northwestern.edu">angesvu@u.northwestern.edu</a>
+              <p className="aboutme-text">
+                <FontAwesomeIcon icon={faEnvelope} className="text-cambridge" /> &nbsp;
+                <a target="_blank" href="mailto:angesvu@u.northwestern.edu">angesvu@u.northwestern.edu</a>
               </p>
             </div>
         </div>
@@ -36,7 +40,8 @@ export default function Home() {
           <div className="flex flex-col gap-y-4 justify-center py-16 z-10 relative items-center md:flex-row md:px-16">
               <div className="p-4 teaching-card w-full max-w-96">
                 <div className="flex flex-col gap-y-4 text-center bg-white shadow-lg p-8">
-                  <i className="fa-solid fa-school text-tiffany text-8xl"></i>
+                  <FontAwesomeIcon icon={faSchool} className="text-tiffany text-8xl" />
+
                   <h2 className="text-lg font-bold">Sound Patterns in Human Language</h2>
                   <p className="text-sm">[Fall 2024] Department of Linguistics, Northwestern University</p>
                   <p className="text-sm">Instructor: Jennifer Cole</p>

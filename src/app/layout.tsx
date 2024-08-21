@@ -3,6 +3,10 @@ import { Montserrat } from 'next/font/google';
 import "./globals.css";
 import Navbar from "./_components/Navbar";
 
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+
 // const openSans = Open_Sans({ subsets: ["latin"] });
 const montserrat = Montserrat({
   weight: ['300', '400', '500', '700'],
@@ -28,7 +32,7 @@ export default function RootLayout({
       <body className={montserrat.className} id="home">
           <Navbar />
           {children}
-          <script src="https://kit.fontawesome.com/5159edec0e.js" crossOrigin="anonymous"></script>
+          {/* <script src="https://kit.fontawesome.com/5159edec0e.js" crossOrigin="anonymous"></script> */}
         </body>
     </html>
   );
