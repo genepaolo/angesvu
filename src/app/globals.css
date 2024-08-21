@@ -60,6 +60,7 @@ label span {
 .text-nav {
   display: inline-block;
   cursor: pointer;
+
   @apply text-gray hover:text-tiffany hover:no-underline;
 
 }
@@ -67,6 +68,9 @@ label span {
 .text-nav-menu{
   display: block;
   cursor: pointer;
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 1rem 0rem;
   @apply text-black hover:text-white hover:no-underline;
 }
 
