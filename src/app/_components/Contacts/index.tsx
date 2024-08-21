@@ -3,7 +3,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 export default function Contacts(props:any) {
-  const color = props.color ? props.color : "text-white";
+  const color = props.color ? props.color : "text-cambridge";
   return (
     <div className="text-md flex flex-row justify-center gap-x-4">
       <a href="mailto:angesvu@u.northwestern.edu" target="_blank">
